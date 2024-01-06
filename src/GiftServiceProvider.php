@@ -2,9 +2,9 @@
 
 namespace Fintech\Gift;
 
-use Illuminate\Support\ServiceProvider;
-use Fintech\Gift\Commands\InstallCommand;
 use Fintech\Gift\Commands\GiftCommand;
+use Fintech\Gift\Commands\InstallCommand;
+use Illuminate\Support\ServiceProvider;
 
 class GiftServiceProvider extends ServiceProvider
 {
