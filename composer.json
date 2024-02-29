@@ -60,6 +60,8 @@
     "extra": {
         "laravel": {
             "providers": [
+                "Fintech\\Gift\\RepositoryServiceProvider",
+                "Fintech\\Gift\\RouteServiceProvider",
                 "Fintech\\Gift\\GiftServiceProvider"
             ],
             "aliases": {
