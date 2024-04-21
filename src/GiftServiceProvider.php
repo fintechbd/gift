@@ -2,12 +2,15 @@
 
 namespace Fintech\Gift;
 
+use Fintech\Core\Traits\RegisterPackageTrait;
 use Fintech\Gift\Commands\GiftCommand;
 use Fintech\Gift\Commands\InstallCommand;
 use Illuminate\Support\ServiceProvider;
 
 class GiftServiceProvider extends ServiceProvider
 {
+    use RegisterPackageTrait;
+
     /**
      * Register any application services.
      *
@@ -15,6 +18,8 @@ class GiftServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->packageCode = 'gift';
+
         $this->mergeConfigFrom(
             __DIR__.'/../config/gift.php', 'fintech.gift'
         );
@@ -28,6 +33,8 @@ class GiftServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        $this->injectOnConfig();
+
         $this->publishes([
             __DIR__.'/../config/gift.php' => config_path('fintech/gift.php'),
         ]);
