@@ -1,6 +1,6 @@
 <?php
 
-namespace Fintech\Gift;
+namespace Fintech\Gift\Providers;
 
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;

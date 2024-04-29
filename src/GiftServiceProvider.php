@@ -24,8 +24,8 @@ class GiftServiceProvider extends ServiceProvider
             __DIR__.'/../config/gift.php', 'fintech.gift'
         );
 
-        $this->app->register(RouteServiceProvider::class);
-        $this->app->register(RepositoryServiceProvider::class);
+        $this->app->register(\Fintech\Gift\Providers\RouteServiceProvider::class);
+        $this->app->register(\Fintech\Gift\Providers\RepositoryServiceProvider::class);
     }
 
     /**
