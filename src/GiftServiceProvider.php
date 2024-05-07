@@ -3,7 +3,6 @@
 namespace Fintech\Gift;
 
 use Fintech\Core\Traits\RegisterPackageTrait;
-use Fintech\Gift\Commands\GiftCommand;
 use Fintech\Gift\Commands\InstallCommand;
 use Illuminate\Support\ServiceProvider;
 
@@ -24,7 +23,6 @@ class GiftServiceProvider extends ServiceProvider
             __DIR__.'/../config/gift.php', 'fintech.gift'
         );
 
-        $this->app->register(\Fintech\Gift\Providers\RouteServiceProvider::class);
         $this->app->register(\Fintech\Gift\Providers\RepositoryServiceProvider::class);
     }
 
@@ -55,8 +53,7 @@ class GiftServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->commands([
-                InstallCommand::class,
-                GiftCommand::class,
+                InstallCommand::class
             ]);
         }
     }
