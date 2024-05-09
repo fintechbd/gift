@@ -4,6 +4,7 @@ namespace Fintech\Gift;
 
 use Fintech\Core\Traits\RegisterPackageTrait;
 use Fintech\Gift\Commands\InstallCommand;
+use Fintech\Gift\Providers\RepositoryServiceProvider;
 use Illuminate\Support\ServiceProvider;
 
 class GiftServiceProvider extends ServiceProvider
@@ -20,10 +21,10 @@ class GiftServiceProvider extends ServiceProvider
         $this->packageCode = 'gift';
 
         $this->mergeConfigFrom(
-            __DIR__.'/../config/gift.php', 'fintech.gift'
+            __DIR__ . '/../config/gift.php', 'fintech.gift'
         );
 
-        $this->app->register(\Fintech\Gift\Providers\RepositoryServiceProvider::class);
+        $this->app->register(RepositoryServiceProvider::class);
     }
 
     /**
@@ -34,21 +35,21 @@ class GiftServiceProvider extends ServiceProvider
         $this->injectOnConfig();
 
         $this->publishes([
-            __DIR__.'/../config/gift.php' => config_path('fintech/gift.php'),
+            __DIR__ . '/../config/gift.php' => config_path('fintech/gift.php'),
         ]);
 
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
 
-        $this->loadTranslationsFrom(__DIR__.'/../lang', 'gift');
+        $this->loadTranslationsFrom(__DIR__ . '/../lang', 'gift');
 
         $this->publishes([
-            __DIR__.'/../lang' => $this->app->langPath('vendor/gift'),
+            __DIR__ . '/../lang' => $this->app->langPath('vendor/gift'),
         ]);
 
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'gift');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'gift');
 
         $this->publishes([
-            __DIR__.'/../resources/views' => resource_path('views/vendor/gift'),
+            __DIR__ . '/../resources/views' => resource_path('views/vendor/gift'),
         ]);
 
         if ($this->app->runningInConsole()) {
