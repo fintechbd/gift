@@ -2,7 +2,7 @@
 
 namespace Fintech\Gift;
 
-use Fintech\Core\Traits\RegisterPackageTrait;
+use Fintech\Core\Traits\Packages\RegisterPackageTrait;
 use Fintech\Gift\Commands\InstallCommand;
 use Fintech\Gift\Providers\RepositoryServiceProvider;
 use Illuminate\Support\ServiceProvider;
