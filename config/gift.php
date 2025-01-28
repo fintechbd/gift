@@ -9,7 +9,7 @@ return [
     |--------------------------------------------------------------------------
     | This setting enable the API will be available or not
     */
-    'enabled' => env('PACKAGE_GIFT_ENABLED', true),
+    'enabled' => env('GIFT_ENABLED', true),
 
     /*
     |--------------------------------------------------------------------------
