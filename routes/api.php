@@ -17,7 +17,7 @@ if (Config::get('fintech.gift.enabled')) {
     Route::prefix(config('fintech.gift.root_prefix', 'api/'))->middleware(['api'])->group(function () {
         Route::prefix('gift')->name('gift.')->group(function () {
 
-            //DO NOT REMOVE THIS LINE//
+            // DO NOT REMOVE THIS LINE//
         });
     });
 }
