@@ -36,7 +36,7 @@ class GiftServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__.'/../config/gift.php' => config_path('fintech/gift.php'),
-        ]);
+        ], 'fintech-gift-config');
 
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
@@ -44,7 +44,7 @@ class GiftServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__.'/../lang' => $this->app->langPath('vendor/gift'),
-        ]);
+        ], 'fintech-gift-lang');
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'gift');
 
@@ -52,7 +52,7 @@ class GiftServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__.'/../resources/views' => resource_path('views/vendor/gift'),
-        ]);
+        ], 'fintech-gift-views');
 
         if ($this->app->runningInConsole()) {
             $this->commands([
